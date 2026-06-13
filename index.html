@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>崔知行｜健身避坑知识库 · 8年经验带你系统入门</title>
+  <meta name="description" content="健身避坑知识库：10章核心指南 + 60+本专业书籍 + 5大工具箱 + AI问答。昆明自由教练崔知行8年实战经验，帮你少花冤枉钱、不走弯路。">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: #1a1a1a;
+      background: #f7f8fa;
+      line-height: 1.7;
+    }
+    .wrap { max-width: 520px; margin: 0 auto; background: #fff; min-height: 100vh; }
+
+    /* ===== Hero ===== */
+    .hero {
+      background: linear-gradient(160deg, #0f766e 0%, #0d9488 40%, #14b8a6 100%);
+      color: #fff;
+      padding: 36px 24px 28px;
+      text-align: center;
+    }
+    .hero .pre-head {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 8px;
+    }
+    .hero h1 {
+      font-size: 30px;
+      font-weight: 800;
+      margin-bottom: 6px;
+      letter-spacing: 2px;
+    }
+    .hero .tag {
+      font-size: 14px;
+      opacity: 0.9;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+    .hero .badge-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .hero .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.18);
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      backdrop-filter: blur(4px);
+    }
+
+    /* ===== Stats ===== */
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      padding: 18px 12px;
+      background: #f0fdfa;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .stat { text-align: center; }
+    .stat strong { display: block; font-size: 22px; color: #0f766e; letter-spacing: 0.5px; }
+    .stat span  { font-size: 11px; color: #666; }
+
+    /* ===== Sections ===== */
+    section { padding: 28px 20px; }
+    section + section { border-top: 1px solid #f0f0f0; }
+    h2 {
+      font-size: 20px;
+      margin-bottom: 8px;
+      color: #0f766e;
+      letter-spacing: 0.5px;
+    }
+    .slogan {
+      font-size: 15px;
+      font-weight: 600;
+      color: #0d5f58;
+      background: #f0fdfa;
+      padding: 12px 16px;
+      border-radius: 8px;
+      border-left: 4px solid #14b8a6;
+      margin: 16px 0;
+    }
+    .value-grid {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .value-card {
+      background: #f9fafb;
+      border-radius: 10px;
+      padding: 16px;
+      font-size: 14px;
+    }
+    .value-card .num {
+      display: inline-block;
+      width: 24px; height: 24px;
+      line-height: 24px;
+      text-align: center;
+      background: #0f766e;
+      color: #fff;
+      border-radius: 50%;
+      font-size: 12px;
+      font-weight: bold;
+      margin-right: 8px;
+    }
+    .value-card strong { color: #0f766e; }
+
+    /* ===== Module Cards ===== */
+    .module {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 16px;
+    }
+    .module h3 {
+      font-size: 17px;
+      color: #0d5f58;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .module h3 .icon { font-size: 22px; }
+
+    /* Chapter Table */
+    .chap-table {
+      width: 100%;
+      font-size: 12px;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    .chap-table th {
+      background: #f0fdfa;
+      color: #0f766e;
+      padding: 8px 6px;
+      text-align: left;
+      font-weight: 600;
+    }
+    .chap-table td {
+      padding: 8px 6px;
+      border-bottom: 1px solid #f0f0f0;
+      vertical-align: top;
+    }
+    .chap-table .ch { color: #0f766e; font-weight: 700; white-space: nowrap; }
+    .chap-table .for { font-size: 11px; color: #888; }
+
+    /* ===== Book Tags ===== */
+    .book-cat {
+      margin-bottom: 12px;
+    }
+    .book-cat h4 {
+      font-size: 13px;
+      color: #0f766e;
+      margin-bottom: 6px;
+    }
+    .book-cat ul {
+      list-style: none;
+      padding: 0;
+    }
+    .book-cat li {
+      font-size: 12px;
+      color: #444;
+      padding: 3px 0;
+      padding-left: 16px;
+      position: relative;
+    }
+    .book-cat li::before {
+      content: "·";
+      position: absolute;
+      left: 4px;
+      color: #14b8a6;
+      font-weight: bold;
+    }
+
+    /* ===== Feature List ===== */
+    .feat-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 12px;
+    }
+    .feat-list li {
+      padding: 8px 0 8px 24px;
+      position: relative;
+      font-size: 14px;
+      border-bottom: 1px solid #f5f5f5;
+    }
+    .feat-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #14b8a6;
+      font-weight: bold;
+    }
+
+    /* ===== Audience Tags ===== */
+    .aud-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .aud-tag {
+      background: #f0fdfa;
+      color: #0f766e;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      border: 1px solid #ccfbf1;
+    }
+
+    /* ===== Usage Cards ===== */
+    .use-card {
+      background: #f9fafb;
+      border-radius: 10px;
+      padding: 16px;
+      margin-top: 12px;
+    }
+    .use-card h4 {
+      font-size: 15px;
+      color: #0f766e;
+      margin-bottom: 8px;
+    }
+    .use-card p, .use-card li {
+      font-size: 13px;
+      color: #444;
+    }
+    .use-card ul {
+      padding-left: 18px;
+    }
+
+    /* ===== Product ===== */
+    .product {
+      background: linear-gradient(135deg, #fffbeb 0%, #ffedd5 100%);
+      border: 2px solid #fbbf24;
+      border-radius: 14px;
+      padding: 24px;
+      text-align: center;
+      margin-top: 16px;
+    }
+    .product .price {
+      font-size: 38px;
+      color: #d97706;
+      font-weight: 800;
+      margin: 8px 0;
+    }
+    .product .price small { font-size: 18px; font-weight: 600; }
+    .product .meta {
+      font-size: 13px;
+      color: #92400e;
+      margin-top: 8px;
+      line-height: 1.6;
+    }
+
+    /* ===== CTA Button ===== */
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 10px;
+      font-size: 17px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      margin-top: 12px;
+      transition: background 0.2s;
+    }
+    .btn-primary { background: #0f766e; color: #fff; }
+    .btn-primary:hover { background: #0d5f58; }
+    .btn-warm { background: #d97706; color: #fff; }
+    .btn-warm:hover { background: #b45309; }
+
+    /* ===== WeChat Box ===== */
+    .wechat-box {
+      text-align: center;
+      background: #f0fdfa;
+      border-radius: 14px;
+      padding: 24px;
+    }
+    .wechat-box .wxid {
+      font-size: 22px;
+      font-weight: 800;
+      color: #0f766e;
+      margin: 10px 0;
+      letter-spacing: 1.5px;
+    }
+    .qr-img {
+      width: 180px;
+      height: 180px;
+      margin: 16px auto;
+      border-radius: 10px;
+      display: block;
+      object-fit: contain;
+    }
+
+    /* ===== Highlight Box ===== */
+    .highlight-box {
+      background: #fefce8;
+      border: 1px solid #fde68a;
+      border-radius: 10px;
+      padding: 16px;
+      margin-top: 16px;
+      font-size: 13px;
+      color: #713f12;
+      line-height: 1.7;
+    }
+
+    /* ===== Update Banner ===== */
+    .update-banner {
+      background: linear-gradient(135deg, #dcfce7, #f0fdf4);
+      border: 1px solid #86efac;
+      border-radius: 10px;
+      padding: 16px;
+      margin-top: 16px;
+      font-size: 13px;
+      color: #166534;
+    }
+    .update-banner h4 {
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+    .update-banner ul {
+      padding-left: 18px;
+    }
+    .update-banner li {
+      margin-bottom: 4px;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 12px;
+      color: #999;
+      background: #f7f8fa;
+      line-height: 1.8;
+    }
+
+    /* ===== Sticky Bar ===== */
+    .sticky-bar {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 520px;
+      padding: 10px 16px;
+      background: #fff;
+      border-top: 1px solid #e5e7eb;
+      box-shadow: 0 -4px 16px rgba(0,0,0,0.1);
+      z-index: 100;
+      display: flex;
+      gap: 10px;
+    }
+    .sticky-bar .btn {
+      flex: 1;
+      margin: 0;
+      padding: 14px;
+      font-size: 15px;
+    }
+    .wrap { padding-bottom: 90px; }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 400px) {
+      section { padding: 22px 14px; }
+      .hero { padding: 28px 16px 22px; }
+      .hero h1 { font-size: 26px; }
+      .chap-table { font-size: 11px; }
+    }
+
+    /* ===== Accordion (light) ===== */
+    .toggle-section { cursor: pointer; user-select: none; display: flex; justify-content: space-between; align-items: center; }
+    .toggle-section::after { content: "▾"; font-size: 14px; color: #999; transition: transform 0.2s; }
+    .toggle-section.open::after { transform: rotate(180deg); }
+    .toggle-body { display: none; }
+    .toggle-body.show { display: block; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- ═══════════ Hero ═══════════ -->
+    <header class="hero">
+      <img src="photo.jpg" alt="崔知行" style="width:90px;height:90px;border-radius:50%;object-fit:cover;border:3px solid rgba(255,255,255,0.5);margin-bottom:14px;" onerror="this.style.display='none'">
+      <p class="pre-head">👋 你来了，花 3 分钟看完这一篇</p>
+      <h1>崔知行</h1>
+      <p class="tag">昆明自由健身教练 · 8 年实战经验<br>健身避坑知识库 · 帮你少花冤枉钱、不走弯路</p>
+      <div class="badge-row">
+        <span class="badge">🏅 NSCA国际认证</span>
+        <span class="badge">📕 小红书9.5万+浏览</span>
+        <span class="badge">🏬 知行体育店</span>
+        <span class="badge">🛒 电商运营者</span>
+        <span class="badge">🧩 一人公司</span>
+      </div>
+    </header>
+
+    <!-- ═══════════ Stats ═══════════ -->
+    <div class="stats">
+      <div class="stat"><strong>30岁</strong><span>8年一线执教</span></div>
+      <div class="stat"><strong>300+</strong><span>累计服务会员</span></div>
+      <div class="stat"><strong>5000+</strong><span>私教课时数</span></div>
+    </div>
+
+    <!-- ═══════════ 关于我 ═══════════ -->
+    <section style="padding-bottom:20px;">
+      <h2>👤 关于我</h2>
+      <p style="font-size:13px;color:#888;margin-bottom:14px;">上面是数字，下面是一个真实的人。</p>
+      <div style="display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap;">
+        <div style="flex:1;min-width:200px;">
+          <p style="font-size:15px;line-height:1.9;">
+            <strong>崔知行</strong>，本名崔挺，「知行」取自「知行合一」，30岁，昆明。<br>
+            8年健身房私教，先后待过健身工作室和商业健身房，2026年4月辞职成为<strong>自由教练</strong>。
+          </p>
+          <p style="font-size:14px;color:#555;line-height:1.8;margin-top:8px;">
+            一个从失恋、负债和职业低谷中重建自己的普通人。<br>
+            用真诚和行动记录全过程——正在做自由教练，经营自己的自媒体，跑通了<strong>「线上内容引流 → 线下私教交付」</strong>的模式。
+          </p>
+        </div>
+      </div>
+
+      <!-- 标签 -->
+      <div class="aud-tags" style="margin-top:14px;">
+        <span class="aud-tag">🏅 NSCA国际认证</span>
+        <span class="aud-tag">🎓 211英专</span>
+        <span class="aud-tag">📕 小学英语教师资格证</span>
+        <span class="aud-tag">🏬 知行体育店</span>
+        <span class="aud-tag">🛒 电商运营者</span>
+        <span class="aud-tag">📱 小红书9.5万+浏览</span>
+        <span class="aud-tag">📝 公众号700+粉</span>
+        <span class="aud-tag">🤖 AI工具探索者</span>
+        <span class="aud-tag">📚 ima知识库重度用户</span>
+      </div>
+
+      <div style="margin-top:14px;font-size:13px;color:#555;line-height:1.8;">
+        <strong>📱 主要阵地：</strong>公众号「崔知行」+ 小红书「崔知行（昆明自由教练）」<br>
+        <strong>✍️ 内容风格：</strong>真诚、口语化、有行动感。不写鸡汤，不堆砌数据，不回避脆弱。<br>
+        <strong>📂 已建合集：</strong>知行教练手记 · 知行重建法 · 知行输出法<br>
+        <strong>🎯 一句话定位：</strong>一个从低谷中重建自己的普通人，用真诚和行动记录全过程。
+      </div>
+    </section>
+
+    <!-- ═══════════ 核心定位 ═══════════ -->
+    <section>
+      <div style="text-align:center;font-size:13px;color:#999;margin-bottom:6px;">—— 所以，我把这些经验写成了这个知识库 ——</div>
+      <h2>🧭 这个知识库是什么？</h2>
+      <div class="slogan">
+        帮你少花冤枉钱、少走弯路、不被忽悠地开启正确的健身之路。
+      </div>
+      <p style="font-size:14px;color:#555;margin-top:12px;">
+        这不是一本教你「怎么练出八块腹肌」的书——那种满大街都是。<br><br>
+        这是一本教你<strong>如何在充满套路的健身行业里保护自己</strong>的防骗手册。<br><br>
+        不是网上东拼西凑的资料合集——是我在这个行业里摸爬滚打 8 年之后，把所有<strong>不想让同行知道的、真正帮到普通人的东西</strong>，整理成的一份系统性指南。
+      </p>
+
+      <div class="value-grid" style="margin-top:16px;">
+        <div class="value-card">
+          <span class="num">1</span><strong>真实视角</strong><br>
+          <span style="font-size:13px;color:#555;">带过上千学员、见过无数销售套路和教练划水行为的一线教练，每章内容来自真实经历。</span>
+        </div>
+        <div class="value-card">
+          <span class="num">2</span><strong>可操作性强</strong><br>
+          <span style="font-size:13px;color:#555;">不只告诉你「是什么」，更给你逐条检查清单、明确红黑榜、30 个坑逐个拆解附解决方案。</span>
+        </div>
+        <div class="value-card">
+          <span class="num">3</span><strong>覆盖完整决策链</strong><br>
+          <span style="font-size:13px;color:#555;">从你还没办卡 → 到成为有经验训练者，每个关键节点都有对应避坑内容。</span>
+        </div>
+        <div class="value-card">
+          <span class="num">4</span><strong>专业书籍 + AI 问答</strong><br>
+          <span style="font-size:13px;color:#555;">60+本专业书籍 PDF + 基于内容 AI 智能提问 = 随身私人顾问，持续更新中。</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ 模块一：核心十章 ═══════════ -->
+    <section>
+      <h2>📖 模块一：核心十章</h2>
+      <p style="font-size:13px;color:#666;margin-bottom:12px;">整个知识库的灵魂——8年经验的精华浓缩，每章针对一个具体避坑场景。</p>
+
+      <table class="chap-table">
+        <thead>
+          <tr><th style="width:18%;">章节</th><th style="width:30%;">解决什么问题</th><th>适合谁</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="ch">第一章</td>
+            <td>教练刷手机、不纠正动作、套路输出……10个信号识别划水</td>
+            <td class="for">已请/打算请私教</td>
+          </tr>
+          <tr>
+            <td class="ch">第二章</td>
+            <td>暂停规则？转卡费？有效期陷阱？每个问题配完整话术</td>
+            <td class="for">还没办卡 / 准备续卡</td>
+          </tr>
+          <tr>
+            <td class="ch">第三章</td>
+            <td>饮食8坑 + 训练10坑 + 装备6坑 + 心态6坑，30坑逐条拆解</td>
+            <td class="for">新手 0-6 个月</td>
+          </tr>
+          <tr>
+            <td class="ch">第四章</td>
+            <td>常见翻车操作 + 科学减脂公式 + 周计划表</td>
+            <td class="for">减脂反复失败者</td>
+          </tr>
+          <tr>
+            <td class="ch">第五章</td>
+            <td>自动续费、教练离职课作废、天价转卡费……6大条款拆解</td>
+            <td class="for">已办卡 / 准备签约</td>
+          </tr>
+          <tr>
+            <td class="ch">第六章</td>
+            <td>5套省钱方案 + 最低成本路径表（月预算300-2000）</td>
+            <td class="for">预算有限想找指导</td>
+          </tr>
+          <tr>
+            <td class="ch">第七章</td>
+            <td>绿灯区 ✅ 黄灯区 ⚠️ 红灯区 ❌ + 使用顺序表</td>
+            <td class="for">第一次进健身房</td>
+          </tr>
+          <tr>
+            <td class="ch">第八章</td>
+            <td>肌酸✅ 蛋白粉✅ BCAA❌ 左旋❌……完整红黑榜 + 月度预算表</td>
+            <td class="for">被补剂广告搞晕</td>
+          </tr>
+          <tr>
+            <td class="ch">第九章</td>
+            <td>"女生练力量会长肌肉块""局部减脂"……6大女性专属误区</td>
+            <td class="for">所有女性健身者</td>
+          </tr>
+          <tr>
+            <td class="ch">第十章</td>
+            <td>Day1-Day30 完整日程 + 饮食底线5条 + 掉队应对法</td>
+            <td class="for">完全零基础</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="highlight-box" style="margin-top:14px;">
+        <strong>💡 阅读建议：</strong>不需要从头读到尾！<br>
+        想办卡 → 先看<strong>第二章</strong> · 想减脂 → 看<strong>第四章</strong> · 女生 → <strong>第九章</strong>一定要看 · 零基础 → <strong>第十章</strong>直接开始
+      </div>
+    </section>
+
+    <!-- ═══════════ 模块二：工具箱 ═══════════ -->
+    <section>
+      <h2>🛠️ 模块二：实用工具箱（5个）</h2>
+      <p style="font-size:13px;color:#666;margin-bottom:12px;">不是理论，是工具——打印出来或截图保存，直接用。</p>
+
+      <div style="display:grid;gap:10px;">
+        <div class="module" style="margin-top:0;">
+          <h3>📋 私教面试 / 试课提问清单</h3>
+          <p style="font-size:13px;color:#555;">15 个专业问题 + 试课后自我评估 4 问——打勾式清单，见教练前必备武器。</p>
+        </div>
+        <div class="module" style="margin-top:0;">
+          <h3>📝 健身房签约前检查清单</h3>
+          <p style="font-size:13px;color:#555;">20+ 项逐条核对：暂停规则、转卡退费、隐藏收费、自动续约……签约前最后一道防线。</p>
+        </div>
+        <div class="module" style="margin-top:0;">
+          <h3>📅 30 天健身起步打卡表</h3>
+          <p style="font-size:13px;color:#555;">30 天完整打卡 + 每周饮食自评 + 感受记录栏——从零开始的行动追踪。</p>
+        </div>
+        <div class="module" style="margin-top:0;">
+          <h3>✅ 训练计划自检表</h3>
+          <p style="font-size:13px;color:#555;">快速判断你的训练计划是否科学合理，避免瞎练。</p>
+        </div>
+        <div class="module" style="margin-top:0;">
+          <h3>🎯 动作选择指南</h3>
+          <p style="font-size:13px;color:#555;">不同目标对应动作优先级，帮你省掉无效训练时间。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ 模块三：书籍库 ═══════════ -->
+    <section>
+      <h2>📚 模块三：专业书籍库（60+本）</h2>
+      <p style="font-size:13px;color:#666;margin-bottom:12px;">覆盖 6 大领域，可直接阅读全文，也可基于任何一本书向 AI 提问——就像有私人导师陪你读书。</p>
+
+      <div class="book-cat">
+        <h4>🔬 解剖与康复类（5本）</h4>
+        <ul>
+          <li>《体态矫正指南》—— 体态问题系统纠正</li>
+          <li>《麦氏腰背痛（第四版）》—— 腰背疼痛管理权威参考</li>
+          <li>《颈痛障碍康复管理》—— 颈部疼痛循证康复</li>
+          <li>《人体筋膜系统功能解剖图谱》—— 筋膜训练科学基础</li>
+          <li>《肌筋膜疼痛与功能障碍：触发点手册》—— 肌筋膜疼痛处理</li>
+        </ul>
+      </div>
+
+      <div class="book-cat">
+        <h4>💪 力量训练经典（4本）</h4>
+        <ul>
+          <li>《Starting Strength 第3版》马克·瑞比托 —— 力量训练圣经</li>
+          <li>《量化健身：原理解析》陈柏龄 —— 从解剖/生理/营养量化训练</li>
+          <li>《量化健身(动作精讲)》—— 每个动作技术细节图解</li>
+          <li>《力量训练的艺术》—— 力量训练哲学与实践</li>
+        </ul>
+      </div>
+
+      <div class="book-cat">
+        <h4>🏋️ 体能与功能性训练（4本）</h4>
+        <ul>
+          <li>《体育运动中的功能性训练 第2版》—— 功能性训练体系</li>
+          <li>《NASM-CPT 第6版》—— 美国国家运动医学学会认证官方指南</li>
+          <li>《NASM OPT 模型》—— NASM 核心训练设计模型</li>
+          <li>《美国国家体能协会爆发力训练指南》—— NSCA 爆发力专项</li>
+        </ul>
+      </div>
+
+      <div class="book-cat">
+        <h4>🥗 营养与减脂（4本）</h4>
+        <ul>
+          <li>《健身营养全书》克里斯蒂安·冯·勒费尔霍尔茨 —— 运动营养学权威</li>
+          <li>《美国国家体能协会运动营养指南》—— NSCA 官方指南</li>
+          <li>《减脂生活：基础代谢减肥法》邱超平医生 —— 1000万+用户验证</li>
+          <li>《肥胖代码：减肥的秘密》冯子新 —— 减肥的激素真相</li>
+        </ul>
+      </div>
+
+      <p style="font-size:12px;color:#888;margin-top:10px;">另有周期化与评估、拉伸与康复、运动解剖等更多书籍……持续新增中。</p>
+    </section>
+
+    <!-- ═══════════ 模块四：训练模板 ═══════════ -->
+    <section>
+      <h2>📋 模块四：训练计划模型（9套）</h2>
+      <p style="font-size:13px;color:#666;margin-bottom:12px;">不只是理论，还有可直接用的训练模板：</p>
+
+      <table class="chap-table">
+        <thead><tr><th>模板</th><th>内容</th><th>适用阶段</th></tr></thead>
+        <tbody>
+          <tr><td class="ch">入门第一阶段</td><td>基础动作模式建立</td><td class="for">练习 0-4 周</td></tr>
+          <tr><td class="ch">入门第二阶段</td><td>力量基础强化</td><td class="for">练习 5-8 周</td></tr>
+          <tr><td class="ch">入门第三阶段</td><td>全面能力提升</td><td class="for">练习 9-12 周</td></tr>
+          <tr><td class="ch">NASM OPT 模型</td><td>NASM 完整训练设计模型</td><td class="for">进阶训练设计</td></tr>
+          <tr><td class="ch">ACE IFT 模型</td><td>美国运动委员会整合训练</td><td class="for">系统训练框架</td></tr>
+          <tr><td class="ch">功能性训练模型</td><td>Mike Boyle 体系</td><td class="for">功能性提升</td></tr>
+          <tr><td class="ch">⭐ 知行训练模型</td><td>8年自研经验框架</td><td class="for">综合应用</td></tr>
+          <tr><td class="ch">CFSC进退阶</td><td>完整动作难度调整体系</td><td class="for">动作进阶/退阶</td></tr>
+          <tr><td class="ch">青少年模板</td><td>初中生 / 高中生力量训练</td><td class="for">青少年专项</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ═══════════ 模块五：精选外链 ═══════════ -->
+    <section>
+      <h2>🔗 模块五：精选内容</h2>
+      <p style="font-size:13px;color:#666;margin-bottom:12px;">小程序内收录的小红书爆款笔记 & 公众号文章：</p>
+
+      <ul class="feat-list">
+        <li>「每年夏天都想减脂，为什么总是失败？」—— 公众号爆款</li>
+        <li>「别再被套路了！私教课买多少节合适？」—— 小红书高赞</li>
+        <li>「健身房小白生存指南」—— 小红书收藏数最高入门帖</li>
+        <li>「办卡前一定要问的 5 个问题，问完再掏钱💰」—— 小红书爆款</li>
+        <li>「你请的健身私教是不是在划水？看这篇参考」—— 引爆讨论的话题文</li>
+      </ul>
+    </section>
+
+    <!-- ═══════════ 特色与优势 ═══════════ -->
+    <section>
+      <h2>⭐ 知识库特色与优势</h2>
+      <ul class="feat-list">
+        <li><strong>来源权威且实战：</strong>融合 ACSM/NSCA 等国际认证教材 + 8年一线教练实战 + 大量付费课程精华复盘</li>
+        <li><strong>结构清晰路径明确：</strong>工具学习 → 工作流搭建 → 场景应用，纯小白到爱好者都能找到位置</li>
+        <li><strong>内容极度丰富且持续更新：</strong>50+核心文档、100+主题，持续纳入最新实战案例</li>
+        <li><strong>强调生态与集成：</strong>IMA 知识库 + AI 问答 = 随身私人教练；专业书籍 + 导航笔记 = 系统化学习</li>
+        <li><strong>聚焦效率：</strong>最终目标——帮助你降低学习成本，把时间用在真正有效的事情上</li>
+      </ul>
+    </section>
+
+    <!-- ═══════════ 更新公告 ═══════════ -->
+    <section>
+      <h2>📢 2026年6月重大更新</h2>
+      <div class="update-banner">
+        <h4>🔄 以下内容已升级：</h4>
+        <ul>
+          <li><strong>❶ 书籍库升级：</strong>26本 → 60+本，覆盖训练体系 / 营养科学 / 康复疼痛 / 体态拉伸 / 入门模板 / 专业认证 6大领域</li>
+          <li><strong>❷ 训练模板新增 6 大模型：</strong>ACE IFT、Mike Boyle 功能性训练、⭐知行训练模型、CFSC进退阶、初中生/高中生力量训练模板</li>
+          <li><strong>❸ 工具箱升级：</strong>3个 → 5个，新增训练计划自检表、动作选择指南</li>
+        </ul>
+        <p style="margin-top:10px;"><strong>📊 知识库当前数据：</strong><br>
+        专业书籍：60+本 ✅ · 训练模板：9套 ✅ · 工具箱：5个 ✅ · 核心章节：10章 ✅</p>
+      </div>
+    </section>
+
+    <!-- ═══════════ 目标受众 ═══════════ -->
+    <section>
+      <h2>🎯 这个知识库适合谁？</h2>
+      <div class="aud-tags">
+        <span class="aud-tag">🆕 健身小白</span>
+        <span class="aud-tag">🏦 想办卡 / 已办卡</span>
+        <span class="aud-tag">👨‍🏫 在考虑请私教</span>
+        <span class="aud-tag">📉 减脂反复失败</span>
+        <span class="aud-tag">👩 女性健身者</span>
+        <span class="aud-tag">📖 自由健身爱好者</span>
+        <span class="aud-tag">🎓 想成为教练的人</span>
+      </div>
+    </section>
+
+    <!-- ═══════════ 使用方法 ═══════════ -->
+    <section>
+      <h2>📌 如何使用这个知识库？</h2>
+
+      <div class="use-card">
+        <h4>方式一：按需查阅（最推荐）</h4>
+        <p>遇到问题再来看，不用从头学到尾：</p>
+        <ul>
+          <li>明天要去见私教？→ 翻<strong>「私教面试提问清单」</strong></li>
+          <li>纠结要不要办年卡？→ 看<strong>「第二章 + 合同检查清单」</strong></li>
+          <li>今天想开始减脂？→ 看<strong>「第四章」+「30天打卡表」</strong></li>
+          <li>在补剂货架前迷茫？→ 打开<strong>「第八章」</strong>对照着买</li>
+        </ul>
+      </div>
+
+      <div class="use-card">
+        <h4>方式二：系统学习</h4>
+        <p>建议阅读顺序：<br>
+        <span style="font-size:12px;color:#888;">第三章(30个坑) → 第七章(器械) → 第十章(30天计划) → 第一章(判断教练) → 第六章(省钱请教练) → 第四章(减脂) → 第八章(补剂) → 第五章(合同) → 第二章(办卡话术) → 第九章(女性专题)</span></p>
+      </div>
+
+      <div class="use-card" style="background:#f0fdfa;border:1px solid #ccfbf1;">
+        <h4>方式三：AI 智能问答 🤖（最强大）</h4>
+        <p style="margin-bottom:8px;">知识库已接入 AI，就像随身带了一位私人教练——<strong>基于 60+本专业书籍 + 10章原创内容</strong>直接回答你的问题：</p>
+        <ul>
+          <li>「我的教练让我每天做100个卷腹，这样对吗？」→ AI 基于知识库内容回答，不是瞎猜</li>
+          <li>「我想瘦大腿内侧，该做什么动作？」→ AI 引用相关章节，给你有出处的答案</li>
+          <li>「《体态矫正指南》里关于圆肩的建议是什么？」→ AI 精准定位到具体书籍内容</li>
+          <li>「我 35 岁，腰椎不太好，能练硬拉吗？」→ AI 综合康复类书籍 + 训练模板给出建议</li>
+        </ul>
+        <p style="font-size:12px;color:#888;margin-top:8px;">💡 提示：在 IMA 知识库中打开，直接输入问题即可。就像有一位熟悉所有书籍和章节的私人导师陪你学习。</p>
+      </div>
+    </section>
+
+    <!-- ═══════════ 心里话 ═══════════ -->
+    <section>
+      <h2>💬 最后说几句心里话</h2>
+      <p style="font-size:14px;color:#444;line-height:1.9;">
+        我做教练这 8 年，最大的感受就是：<strong>这个行业的信息不对称太严重了。</strong><br><br>
+        教练知道的事情不会主动告诉你——因为告诉你了，你可能就不买那么多课了。<br>
+        健身房销售不会告诉你那些霸王条款——因为你问了可能就不签约了。<br>
+        补剂商家不会告诉你哪些没用——因为他们要卖货赚钱。<br><br>
+        这个知识库，就是把那些<strong>「他们不会告诉你的事」</strong>，一件一件写下来。<br><br>
+        我不是在教你「怎么练出完美身材」——那种内容到处都是。<br>
+        我是在教你<strong>「怎么在这个行业里保护好自己的钱包和时间，然后把省下来的钱和时间用在真正有效的事情上。」</strong>
+      </p>
+
+      <!-- 产品卡片 -->
+      <div class="product">
+        <p style="font-size:15px;font-weight:600;">📦 健身避坑知识库 · 完整版</p>
+        <div class="price"><small>¥</small>25.9</div>
+        <p style="font-size:14px;color:#444;">
+          8年行业经验系统性避坑指南<br>
+          + 60+本专业书籍 + AI 随身问答
+        </p>
+        <p class="meta">
+          一杯奶茶的钱，换一份 8 年行业经验的系统性保护。<br>
+          这笔账，你自己算。
+        </p>
+        <a class="btn btn-warm" href="#wechat" onclick="trackClick('buy')">
+          微信联系我 · 立即获取 →
+        </a>
+      </div>
+    </section>
+
+    <!-- ═══════════ 案例 ═══════════ -->
+    <section>
+      <div style="text-align:center;font-size:13px;color:#999;margin-bottom:6px;">—— 不止是理论，以下是真实结果 ——</div>
+      <h2>🏆 学员变化（节选）</h2>
+      <div class="module" style="margin-top:0;">
+        <strong style="color:#0f766e;">案例 A · 久坐上班族</strong><br>
+        <span style="font-size:13px;color:#555;">3 个月腰围减少 6cm，不靠极端节食，每周练 3 次，现在能标准完成深蹲和硬拉。</span>
+      </div>
+      <div class="module">
+        <strong style="color:#0f766e;">案例 B · 健身新手</strong><br>
+        <span style="font-size:13px;color:#555;">之前自己练导致肩膀疼，调整后 4 周恢复训练，建立了完整热身和动作模式。</span>
+      </div>
+      <div class="module">
+        <strong style="color:#0f766e;">案例 C · 大基数女性</strong><br>
+        <span style="font-size:13px;color:#555;">2 个月配合减脂 6kg，体态明显改善，从不敢照镜子到主动拍对比照。养成每周 3～4 次规律训练习惯，饮食不再走极端。</span>
+      </div>
+      <p style="font-size:12px;color:#888;margin-top:8px;">* 以上为真实训练记录摘要，更多案例添加微信了解</p>
+    </section>
+
+    <!-- ═══════════ 私教价格 ═══════════ -->
+    <section>
+      <div style="text-align:center;font-size:13px;color:#999;margin-bottom:6px;">—— 想亲自带你练？下面就是 ——</div>
+      <h2>🏋️ 昆明线下私教 · 方案 & 价格</h2>
+      <p style="font-size:14px;color:#555;margin-bottom:4px;">
+        自由教练模式，时间灵活，无套路推销。第一次见面先评估再决定。
+      </p>
+      <p style="font-size:13px;color:#888;margin-bottom:16px;">
+        📍 服务区域：昆明主城区 —— 五华区 · 官渡区 · 西山区 · 盘龙区
+      </p>
+
+      <div style="display:grid;gap:10px;">
+        <div class="module" style="margin-top:0;background:#f0fdfa;border-color:#14b8a6;">
+          <h3>🧪 首次体验课</h3>
+          <p style="font-size:20px;font-weight:800;color:#0f766e;">¥99 <span style="font-size:13px;font-weight:400;color:#666;">/ 节</span></p>
+          <p style="font-size:13px;color:#555;">身体评估 + 1小时完整训练，给你一份训练方向建议。先试试，合适再继续。</p>
+        </div>
+        <div class="module" style="margin-top:0;">
+          <h3>🎫 单次课（60分钟）</h3>
+          <p style="font-size:20px;font-weight:800;color:#0f766e;">¥220 <span style="font-size:13px;font-weight:400;color:#666;">/ 节（含场地费）</span></p>
+          <p style="font-size:13px;color:#555;">一次一次付，毫无压力，适合时间不固定的同学。</p>
+        </div>
+        <div class="module" style="margin-top:0;">
+          <h3>📦 10次课包 <span style="font-size:11px;background:#fef3c7;color:#92400e;padding:2px 8px;border-radius:10px;">灵活推荐</span></h3>
+          <p style="font-size:20px;font-weight:800;color:#0f766e;">¥1,900 <span style="font-size:13px;font-weight:400;color:#666;">/ 10节（原价 ¥2,000）</span></p>
+          <p style="font-size:13px;color:#555;">相当于单次 ¥190，有效期 3 个月。想先试试节奏选这个。</p>
+        </div>
+        <div class="module" style="margin-top:0;background:#fffbeb;border-color:#fbbf24;">
+          <h3>⭐ 包月方案 <span style="font-size:11px;background:#fde68a;color:#92400e;padding:2px 8px;border-radius:10px;">最划算</span></h3>
+          <p style="font-size:20px;font-weight:800;color:#d97706;">¥2,100 <span style="font-size:13px;font-weight:400;color:#666;">/ 月（原价 ¥2,200）</span></p>
+          <p style="font-size:13px;color:#555;">含 12 次训练，相当于单次 ¥175。如出差或太忙没练完，<strong>剩余次数顺延下月，不浪费。</strong></p>
+        </div>
+      </div>
+
+      <div class="highlight-box" style="margin-top:14px;">
+        <strong>💡 怎么选？告诉我你一周大概能练几次，我帮你算 😊</strong><br>
+        每周 3 次 → <strong>包月 ¥2,100 最省</strong>（单次 ¥175）<br>
+        想先试节奏 → <strong>10次课包 ¥1,900</strong> 灵活，单价也不错<br>
+        不确定 → <strong>先 ¥99 体验课</strong> 或单次 ¥220，练完再定
+      </div>
+
+      <div style="margin-top:18px;">
+        <h3 style="font-size:16px;color:#0f766e;margin-bottom:10px;">📍 场地怎么解决？（都含在课时费里）</h3>
+        <div class="module" style="margin-top:0;">
+          <strong>方案一：你附近找</strong><br>
+          <span style="font-size:13px;color:#555;">告诉我大概位置，我帮你筛选性价比高的共享健身房或按次付费工作室，场地费已包含在 ¥220 里，不用额外付。</span>
+        </div>
+        <div class="module">
+          <strong>方案二：南屏街我朋友的工作室</strong><br>
+          <span style="font-size:13px;color:#555;">器械够用、环境不错，之前我带学员在那训练过。你过去方便直接约，场地费同样包含。</span>
+        </div>
+      </div>
+
+      <a class="btn btn-primary" href="#wechat" onclick="trackClick('coach')">
+        微信预约 · 先聊再决定 →
+      </a>
+      <p style="font-size:12px;color:#888;text-align:center;margin-top:8px;">告诉我大概位置 + 练几次/周，我帮你定制方案</p>
+    </section>
+
+    <!-- ═══════════ 微信 ═══════════ -->
+    <section id="wechat">
+      <div style="text-align:center;font-size:13px;color:#999;margin-bottom:6px;">—— 无论知识库还是私教，都从这一步开始 ——</div>
+      <h2>📱 添加微信，开始避坑</h2>
+      <div class="wechat-box">
+        <p style="font-size:14px;">搜索微信号或扫码添加</p>
+        <div class="wxid">cuizhixing_fit</div>
+        <img class="qr-img" src="qrcode.png" alt="崔知行微信二维码">
+        <p style="font-size:13px;color:#555;margin-top:8px;">
+          添加请备注：<strong>避坑</strong>（领知识库）或 <strong>私教</strong>（预约咨询）
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══════════ Footer ═══════════ -->
+    <footer>
+      崔知行 · 知行体育店 · 云南昆明<br>
+      最后更新：2026年6月 · © 2026 版权所有
+    </footer>
+
+    <!-- ═══════════ Sticky CTA ═══════════ -->
+    <div class="sticky-bar">
+      <a class="btn btn-primary" href="#wechat" onclick="trackClick('sticky_knowledge')" style="font-size:14px;">
+        ¥25.9 知识库
+      </a>
+      <a class="btn btn-warm" href="#wechat" onclick="trackClick('sticky_coach')" style="font-size:14px;">
+        约私教体验
+      </a>
+    </div>
+
+  </div><!-- .wrap -->
+
+  <script>
+    function trackClick(name) {
+      const key = 'click_' + name;
+      const n = parseInt(localStorage.getItem(key) || '0') + 1;
+      localStorage.setItem(key, n);
+    }
+  </script>
+</body>
+</html>
