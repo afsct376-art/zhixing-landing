@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
@@ -380,7 +380,101 @@
     .toggle-section::after { content: "▾"; font-size: 14px; color: #999; transition: transform 0.2s; }
     .toggle-section.open::after { transform: rotate(180deg); }
     .toggle-body { display: none; }
-    .toggle-body.show { display: block; }
+   .toggle-body.show { display: block; }
+    /* ===== Lead Form ===== */
+    .lead-form { margin-top: 12px; }
+    .form-field { margin-bottom: 14px; }
+    .form-field label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 6px;
+    }
+    .form-field input,
+    .form-field select {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 15px;
+      font-family: inherit;
+      background: #fff;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .form-field input:focus,
+    .form-field select:focus {
+      border-color: #14b8a6;
+      box-shadow: 0 0 0 3px rgba(20,184,166,0.12);
+    }
+    .form-field input.error {
+      border-color: #ef4444;
+      box-shadow: 0 0 0 3px rgba(239,68,68,0.1);
+    }
+    .form-field .err-msg {
+      font-size: 12px;
+      color: #ef4444;
+      margin-top: 4px;
+      display: none;
+    }
+    .form-field .err-msg.show { display: block; }
+    /* ===== Admin Panel ===== */
+    .admin-panel {
+      display: none;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    .admin-panel.show { display: block; }
+    .admin-panel h3 {
+      font-size: 16px;
+      color: #1e293b;
+      margin-bottom: 12px;
+    }
+    .admin-panel table {
+      width: 100%;
+      font-size: 12px;
+      border-collapse: collapse;
+    }
+    .admin-panel th {
+      background: #e2e8f0;
+      padding: 8px 6px;
+      text-align: left;
+      font-weight: 600;
+      color: #334155;
+    }
+    .admin-panel td {
+      padding: 6px;
+      border-bottom: 1px solid #e2e8f0;
+      color: #475569;
+    }
+    .admin-panel .btn-sm {
+      font-size: 12px;
+      padding: 6px 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background: #0f766e;
+      color: #fff;
+      margin-right: 6px;
+    }
+    .admin-panel .btn-sm:hover { background: #0d5f58; }
+    .admin-panel .btn-danger { background: #ef4444; }
+    .admin-panel .btn-danger:hover { background: #dc2626; }
+    .admin-count {
+      display: inline-block;
+      background: #0f766e;
+      color: #fff;
+      border-radius: 10px;
+      padding: 2px 8px;
+      font-size: 12px;
+      margin-left: 6px;
+    }
+    .lead-success { animation: fadeIn 0.3s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body>
@@ -765,6 +859,55 @@
           微信联系我 · 立即获取 →
         </a>
       </div>
+   </section>
+    <!-- ═══════════ 免费领避坑清单 ═══════════ -->
+    <section>
+      <div style="text-align:center;font-size:13px;color:#999;margin-bottom:6px;">— 先领个免费的，再决定要不要花钱 —</div>
+      <h2>📥 免费领《新手健身避坑 checklist》</h2>
+      <p style="font-size:14px;color:#555;margin-bottom:16px;">
+        填完直接发你微信，不花一分钱。看完再决定 25.9 的知识库值不值得。
+      </p>
+      <div class="lead-form" id="leadFormBox">
+        <div class="form-field">
+          <label>怎么称呼你</label>
+          <input type="text" id="leadName" placeholder="你的名字或昵称" maxlength="20">
+        </div>
+        <div class="form-field">
+          <label>你的微信号 <span style="color:#e74c3c;">*</span></label>
+          <input type="text" id="leadWechat" placeholder="确保我能搜到你">
+          <div class="err-msg" id="wechatErr">请输入微信号</div>
+        </div>
+        <div class="form-field">
+          <label>你最想解决</label>
+          <select id="leadNeed">
+            <option value="">选一个（方便我发对应的资料）</option>
+            <option value="start">不知道从哪开始</option>
+            <option value="scam">怕被私教坑</option>
+            <option value="fat">减脂反复失败</option>
+            <option value="coach">想咨询私教</option>
+            <option value="other">其他</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" onclick="submitLead()">
+          🆓 免费领取 →
+        </button>
+        <p style="font-size:12px;color:#999;text-align:center;margin-top:10px;">
+          提交后自动复制微信号，去加我就行
+        </p>
+      </div>
+      <div class="lead-success" id="leadSuccessBox" style="display:none;">
+        <div style="background:#f0fdfa;border:2px solid #14b8a6;border-radius:14px;padding:24px;text-align:center;">
+          <p style="font-size:24px;margin-bottom:8px;">✅</p>
+          <p style="font-size:16px;font-weight:700;color:#0f766e;margin-bottom:8px;">已收到！</p>
+          <p style="font-size:14px;color:#555;margin-bottom:16px;">
+            请扫码加我微信，备注 <strong>「避坑指南」</strong><br>
+            我会把 checklist 发给你
+          </p>
+          <div class="wxid" style="font-size:20px;font-weight:800;color:#0f766e;letter-spacing:1.5px;">cuizhixing_fit</div>
+          <img class="qr-img" src="qrcode.png" alt="微信二维码" style="width:150px;height:150px;margin:12px auto;display:block;border-radius:8px;">
+          <p style="font-size:12px;color:#888;margin-top:8px;">微信号已复制到剪贴板，去微信粘贴搜索</p>
+        </div>
+      </div>
     </section>
 
     <!-- ═══════════ 案例 ═══════════ -->
@@ -878,6 +1021,87 @@
   </div><!-- .wrap -->
 
   <script>
+    /* ==== 线索表单 ==== */
+    function submitLead() {
+      const name = document.getElementById('leadName').value.trim();
+      const wechat = document.getElementById('leadWechat').value.trim();
+      const need = document.getElementById('leadNeed').value;
+      const errEl = document.getElementById('wechatErr');
+      if (!wechat) {
+        document.getElementById('leadWechat').classList.add('error');
+        errEl.classList.add('show');
+        return;
+      }
+      document.getElementById('leadWechat').classList.remove('error');
+      errEl.classList.remove('show');
+      const leads = JSON.parse(localStorage.getItem('zhixing_leads') || '[]');
+      leads.push({ id: Date.now(), name: name || '匿名', wechat: wechat, need: need, time: new Date().toLocaleString('zh-CN') });
+      localStorage.setItem('zhixing_leads', JSON.stringify(leads));
+      navigator.clipboard.writeText('cuizhixing_fit').catch(function(){});
+      document.getElementById('leadFormBox').style.display = 'none';
+      document.getElementById('leadSuccessBox').style.display = 'block';
+      document.getElementById('leadSuccessBox').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    /* ==== 管理面板（按 admin 键打开） ==== */
+    let adminTyped = '';
+    document.addEventListener('keydown', function(e) {
+      adminTyped += e.key;
+      if (adminTyped.length > 5) adminTyped = adminTyped.slice(-5);
+      if (adminTyped.toLowerCase() === 'admin') { toggleAdmin(); adminTyped = ''; }
+    });
+    function toggleAdmin() {
+      let panel = document.getElementById('adminPanel');
+      if (!panel) {
+        panel = document.createElement('div'); panel.id = 'adminPanel';
+        panel.className = 'admin-panel show';
+        panel.style.cssText = 'display:block;max-width:520px;margin:0 auto 20px;';
+        document.querySelector('.wrap').appendChild(panel);
+        renderAdmin(panel);
+      } else {
+        panel.classList.toggle('show');
+        panel.style.display = panel.classList.contains('show') ? 'block' : 'none';
+        if (panel.classList.contains('show')) renderAdmin(panel);
+      }
+    }
+    function renderAdmin(panel) {
+      const leads = JSON.parse(localStorage.getItem('zhixing_leads') || '[]');
+      let html = '<h3>📊 线索管理 <span class="admin-count">' + leads.length + '</span></h3>';
+      if (leads.length === 0) { html += '<p style="color:#999;font-size:13px;">暂无线索</p>'; }
+      else {
+        html += '<table><thead><tr><th>时间</th><th>称呼</th><th>微信号</th><th>需求</th></tr></thead><tbody>';
+        leads.slice().reverse().forEach(function(l) {
+          const m = { start:'入门', scam:'避坑', fat:'减脂', coach:'私教', other:'其他', '':'未选' };
+          html += '<tr><td>' + l.time + '</td><td>' + (l.name||'') + '</td><td>' + l.wechat + '</td><td>' + (m[l.need]||l.need) + '</td></tr>';
+        });
+        html += '</tbody></table>';
+      }
+      html += '<div style="margin-top:12px;display:flex;gap:8px;">';
+      html += '<button class="btn-sm" onclick="exportCSV()">📥 导出 CSV</button>';
+      html += '<button class="btn-sm btn-danger" onclick="clearLeads()">🗑️ 清空</button></div>';
+      html += '<p style="font-size:11px;color:#aaa;margin-top:8px;">在页面上按 admin 键开关此面板（仅你可见）</p>';
+      panel.innerHTML = html;
+    }
+    function exportCSV() {
+      const leads = JSON.parse(localStorage.getItem('zhixing_leads') || '[]');
+      if (!leads.length) { alert('暂无线索'); return; }
+      let csv = '时间,称呼,微信号,需求\n';
+      const m = { start:'入门', scam:'避坑', fat:'减脂', coach:'私教', other:'其他', '':'未选' };
+      leads.forEach(function(l) { csv += '"' + l.time + '","' + (l.name||'') + '","' + l.wechat + '","' + (m[l.need]||l.need) + '"\n'; });
+      const blob = new Blob(['\ufeff' + csv], { type: 'text/csv;charset=utf-8;' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'zhixing_leads_' + new Date().toISOString().slice(0,10) + '.csv';
+      a.click();
+      URL.revokeObjectURL(a.href);
+    }
+    function clearLeads() {
+      if (confirm('确定清空所有线索？不可恢复。')) {
+        localStorage.removeItem('zhixing_leads');
+        const p = document.getElementById('adminPanel');
+        if (p) renderAdmin(p);
+      }
+    }
+    /* ==== 表单 + 管理面板结束 ==== */
     function trackClick(name) {
       const key = 'click_' + name;
       const n = parseInt(localStorage.getItem(key) || '0') + 1;
